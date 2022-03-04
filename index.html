@@ -50,13 +50,13 @@ body {
 <script>
 function storeCookie() {
 var x = document.getElementById('0').value;
-document.cookie = "bodytextyaye=" + x + ";path=/";
+document.cookie = "note=" + x + ";path=/";
 };
 
 function getCookie() {
 var y = decodeURIComponent(document.cookie).split(";");
-// var y = y[y.length - 2].split("bodytextyaye=")
-// var y = y[y.length - 1]
+var y = y.split("note=");
+var y = y[y.length - 1]
 document.getElementById('0').value = y;
 };
 
