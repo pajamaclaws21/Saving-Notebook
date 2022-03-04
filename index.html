@@ -54,10 +54,9 @@ document.cookie = "note=" + x + ";path=/";
 };
 
 function getCookie() {
-var y = decodeURIComponent(document.cookie).split(";");
-var y = y.split("note=");
-//var y = y[y.length - 1]
-document.getElementById('0').value = y;
+var a = decodeURIComponent(document.cookie);
+var b = a[0].split("note=");
+document.getElementById('0').value = b;
 };
 
 function darkMode() {
