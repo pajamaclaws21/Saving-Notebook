@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Saving Notebook</title>
+<style>
+body, .fullscreen {
+  font-family: Arial;
+}
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 70;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  width: 95%;
+  hieght: 100%;
+  border: 1px solid DimGrey;
+  background-color: DimGrey;
+  color: Ghostwhite;
+  font-weight: normal;
+}
+button {
+  background-color: Grey;
+  color: Honeydew;
+  width: 45px;
+  text-align: center;
+}
+body {
+  background-color: DarkSlateGrey;
+  color: Gainsboro;
+}
+.light {
+  position: absolute;
+  bottom: 0;
+  margin: 0 0 5px 0;
+}
+</style>
+</head>
+<body>
+
+<textarea class="fullscreen" id="0">This is a paragraph.</textarea>
+<button onclick="storeCookie()" draggable="false"><b>Save</b></button><br>
+<button onclick="getCookie()" draggable="false"><b>Load</b></button><br>
+<button class="light" onclick="lightMode()" draggable="false"><b>☀</b></button>
+
+<script>
+function storeCookie() {
+var x = document.getElementById('0').value;
+document.cookie = "bodytextyaye=" + x + ";path=/";
+};
+
+function getCookie() {
+var y = decodeURIComponent(document.cookie).split(";");
+var y = y[y.length - 2].split("bodytextyaye=")
+var y = y[y.length - 1]
+document.getElementById('0').value = y;
+};
+
+function lightMode() {
+    location.href = '/index.html';
+}
+</script>
+
+</body>
+</html>
